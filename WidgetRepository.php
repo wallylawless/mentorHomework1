@@ -1,9 +1,11 @@
 <?
+require_once('Widget.php');
+
 class WidgetRepository
 {
 
 	protected $dataModel;
-	protected $dataContainer array;
+	protected $dataContainer;
 
 	public function __construct($dataModel)
 	{
@@ -37,7 +39,7 @@ class WidgetRepository
 
 	public function saveWidget($widget)
 	{
-		$this->dataModel->save($widget);
-		$this->dataContainer[$widget['id']] = $widget;
+		$this->dataContainer[$widget->getId()] = $widget;
+		return $this->dataModel->save($widget);
 	}
 }
