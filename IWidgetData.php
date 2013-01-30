@@ -1,10 +1,10 @@
 <?php
 
-Interface WidgetDataInterface
+Interface IWidgetData
 {
 	public function getAll();
 
 	public function getByName($name);
 
-	public function saveWidget($widget);
+	public function save($widget);
 }
